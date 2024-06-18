@@ -3233,7 +3233,7 @@ class PlayState extends MusicBeatState
 			if (PlayState.isPixelStage) uiSuffix = '-pixel';
 			antialias = !isPixelStage;
 		}
-
+		if (!cpuControlled) {
 		rating.loadGraphic(Paths.image(uiPrefix + daRating.image + uiSuffix));
 		rating.cameras = [camHUD];
 		rating.screenCenter();
@@ -3362,6 +3362,7 @@ class PlayState extends MusicBeatState
 		});
 
 		return daRating;
+	}
 	}
 
 	public var strumsBlocked:Array<Bool> = [];
