@@ -3481,6 +3481,7 @@ class PlayState extends MusicBeatState
 			antialias = !isPixelStage;
 		}
 
+		if (!cpuControlled) {
 		rating.loadGraphic(Paths.image(uiPrefix + daRating.image + uiSuffix));
 		rating.cameras = [camHUD];
 		rating.screenCenter();
@@ -3647,6 +3648,7 @@ class PlayState extends MusicBeatState
 				startDelay: Conductor.crochet * 0.001 / playbackRate,
 				onComplete: (t) -> noteTimingRating.active = false
 			});
+		}
 		}
 
 		return daRating;
